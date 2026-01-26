@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt | Interiery JMP</title>
+    <link rel="stylesheet" href="style.css">
+	<link rel="icon" type="image/png" href="assets/img/favicon.png">
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="menu.js"></script>
+	<script src="map.js"></script>
+	
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">
+			<img src="assets/img/logo.svg" alt="Interiery JMP">
+		</a>
+		
+		<div class="menu-toggle" onclick="toggleMenu()">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+		
+        <nav>
+            <ul id="nav-list">
+                <li><a href="index.html" class="main-link">Úvod</a></li>
+                <li><a href="omne.html" class="main-link">O mně</a></li>
+                <li>
+                    <a href="fotogalerie.html" class="main-link">Fotogalerie ▾</a>
+                    <div class="dropdown-content">
+                        <a href="fotogalerie.html#kuchyne">Kuchyně</a>
+                        <a href="fotogalerie.html#skrine">Vestavěné skříně</a>
+                        <a href="fotogalerie.html#pokoje">Dětské pokoje</a>
+                        <a href="fotogalerie.html#koupelny">Koupelny</a>
+                        <a href="fotogalerie.html#student">Studentské pokoje</a>
+                    </div>
+                </li>
+                <li><a href="realizace.html" class="main-link">Realizace</a></li>
+                <li>
+                    <a href="kontakt.html" class="main-link active">Kontakt ▾</a>
+                    <div class="dropdown-content">
+                        <a href="kontakt.html#udaje">Kontaktní údaje</a>
+                        <a href="kontakt.html#formular">Napište nám</a>
+                    </div>
+                </li>
+                <li><a href="eshop.html" class="main-link">E-shop</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="hero" style="height: 40vh; background-image: url('assets/img/kontakt_hero.webp');">
+        <div class="hero-text">
+            <h1>Kontaktujte nás</h1>
+        </div>
+    </div>
+
+    <main>
+        
+        <section class="contact-split" id="udaje">
+            <div class="contact-map">
+                <div id="mapa"></div>
+            </div>
+
+            <div class="contact-info-panel">
+                <h2>Kde nás najdete</h2>
+                
+                <div class="contact-item">
+                    <svg class="contact-icon" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                    <div>
+                        <strong>Interiery JMP</strong>
+                        Mladoboleslavská 330<br>
+                        190 17 Praha 9 – Vinoř
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <svg class="contact-icon" fill="currentColor" viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+                    <div>
+                        <strong>Po-Pá: 8:00–18:00</strong>
+                        Po telefonické domluvě
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <svg class="contact-icon" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                    <div>
+                        <a href="tel:+420733773305">+420 733 773 305</a>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <svg class="contact-icon" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.04c-5.5 0-10 4.49-10 10.02 0 5 3.66 9.15 8.44 9.9v-7H7.9v-2.9h2.54V9.85c0-2.51 1.49-3.89 3.78-3.89 1.09 0 2.23.19 2.23.19v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.45 2.9h-2.33v7a10 10 0 0 0 8.44-9.9c0-5.53-4.5-10.02-10-10.02z"/></svg>
+                    <div>
+                        <a href="https://www.facebook.com/interiery.jmp?locale=cs_CZ" target="_blank">@Interiery Jmp</a>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <svg class="contact-icon" fill="currentColor" viewBox="0 0 24 24"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/></svg>
+                    <div>
+                        <a href="https://www.instagram.com/interieryjmp/?next=%2F" target="_blank">@interieryjmp</a>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <svg class="contact-icon" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                    <div>
+                        <a href="mailto:info@interieryjmp.cz">info@interieryjmp.cz</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="formular" style="background: #f9f9f9; padding: 60px 20px;">
+            <h2 style="margin-top: 0; text-align: center;">Napište nám</h2>
+            <p style="text-align: center; margin-bottom: 40px;">Máte dotaz nebo zájem o nezávaznou kalkulaci? Vyplňte formulář níže.</p>
+            
+            <div class="form-container">
+                <form action="https://formspree.io/f/maqekznq" method="POST">
+                    <div class="form-group">
+                        <label for="name">Jméno a příjmení</label>
+                        <input type="text" id="name" name="name" placeholder="Jan Novák" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" placeholder="jan.novak@email.cz" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Telefon*</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+420 777 888 999">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Vaše zpráva</label>
+                        <textarea id="message" name="message" rows="6" placeholder="Mám zájem o..." required></textarea>
+                    </div>
+                    
+                    <div style="text-align: center;">
+                        <button type="submit" class="btn-hero" style="border:none; cursor: pointer; width: 100%;">Odeslat zprávu</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>
+            <strong>Interiery JMP</strong><br>
+            Mladoboleslavská 330, 190 17 Praha 9 – Vinoř<br>
+            <a href="tel:+420733773305" style="color: inherit;">+420 733 773 305</a><br><br>
+            &copy; 2026 Interiery JMP
+        </p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O mně | Interiery JMP</title>
+    <link rel="stylesheet" href="style.css">
+	<script src="menu.js" defer></script>
+	<link rel="icon" type="image/png" href="assets/img/favicon.png">
+	
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">
+			<img src="assets/img/logo.svg" alt="Interiery JMP">
+		</a>
+		
+		<div class="menu-toggle" onclick="toggleMenu()">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+		
+        <nav>
+            <ul id="nav-list">
+                <li><a href="index.html" class="main-link">Úvod</a></li>
+                <li><a href="omne.html" class="main-link active">O mně</a></li>
+                <li>
+                    <a href="fotogalerie.html" class="main-link">Fotogalerie ▾</a>
+                    <div class="dropdown-content">
+                        <a href="fotogalerie.html#kuchyne">Kuchyně</a>
+                        <a href="fotogalerie.html#skrine">Vestavěné skříně</a>
+                        <a href="fotogalerie.html#pokoje">Dětské pokoje</a>
+                        <a href="fotogalerie.html#koupelny">Koupelny</a>
+                        <a href="fotogalerie.html#student">Studentské pokoje</a>
+                    </div>
+                </li>
+                <li><a href="realizace.html" class="main-link">Realizace</a></li>
+                <li>
+                    <a href="kontakt.html" class="main-link">Kontakt ▾</a>
+                    <div class="dropdown-content">
+                        <a href="kontakt.html#udaje">Kontaktní údaje</a>
+                        <a href="kontakt.html#formular">Napište nám</a>
+                    </div>
+                </li>
+                <li><a href="eshop.html" class="main-link">E-shop</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="hero" style="height: 40vh; background-image: url('assets/img/omne_hero.webp');">
+        <div class="hero-text">
+            <h1>O mně</h1>
+        </div>
+    </div>
+
+    <main>
+        <div class="about-container">
+            <div class="about-text">
+                <p>Jmenuji se Michal Pavlík. Výrobě a montáži nábytku se věnuji již několik let. Nejprve jsem pracoval u firmy a poté jsem si založil vlastní živnost. Zabývám se výrobou nábytku na míru, ať už do ložnic, kuchyní, tak i obývacích a dětských pokojů a koupelen. Tuto činnost nevnímám jen jako práci, ale celkově patří mezi mé dlouhodobé záliby. </p>
+            </div>
+            <div class="about-image">
+                <img src="assets/img/michal.webp" alt="Michal Pavlík">
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>
+            <strong>Interiery JMP</strong><br>
+            Mladoboleslavská 330, 190 17 Praha 9 – Vinoř<br>
+            <a href="tel:+420733773305" style="color: inherit;">+420 733 773 305</a><br><br>
+            &copy; 2026 Interiery JMP
+        </p>
+    </footer>
+</body>
+</html>

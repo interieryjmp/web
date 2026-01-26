@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-shop | Interiery JMP</title>
+    <link rel="stylesheet" href="style.css">
+	<script src="menu.js" defer></script>
+	<link rel="icon" type="image/png" href="assets/img/favicon.png">
+	
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">
+			<img src="assets/img/logo.svg" alt="Interiery JMP">
+		</a>
+		
+		<div class="menu-toggle" onclick="toggleMenu()">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+		
+        <nav>
+            <ul id="nav-list">
+                <li><a href="index.html" class="main-link">Úvod</a></li>
+                <li><a href="omne.html" class="main-link">O mně</a></li>
+                <li>
+                    <a href="fotogalerie.html" class="main-link">Fotogalerie ▾</a>
+                    <div class="dropdown-content">
+                        <a href="fotogalerie.html#kuchyne">Kuchyně</a>
+                        <a href="fotogalerie.html#skrine">Vestavěné skříně</a>
+                        <a href="fotogalerie.html#pokoje">Dětské pokoje</a>
+                        <a href="fotogalerie.html#koupelny">Koupelny</a>
+                        <a href="fotogalerie.html#student">Studentské pokoje</a>
+                    </div>
+                </li>
+                <li><a href="realizace.html" class="main-link">Realizace</a></li>
+                <li>
+                    <a href="kontakt.html" class="main-link">Kontakt ▾</a>
+                    <div class="dropdown-content">
+                        <a href="kontakt.html#udaje">Kontaktní údaje</a>
+                        <a href="kontakt.html#formular">Napište nám</a>
+                    </div>
+                </li>
+                <li><a href="eshop.html" class="main-link active">E-shop</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="hero" style="height: 40vh; background-image: url('assets/img/eshop_hero.webp');">
+        <div class="hero-text">
+            <h1>E-shop</h1>
+        </div>
+    </div>
+
+    <main>
+        
+        <section class="product-container">
+            <div class="product-image">
+                <img src="assets/img/boxy.webp" alt="Čistící sada">
+            </div>
+
+            <div class="product-details">
+                <h2 style="text-align: left; margin-top: 0;">Závěsné boxy</h2>
+                <p class="price-tag">499 Kč</p>
+                <p style="text-align: left;">
+                    Závěsné boxy na dekorace/knihy
+                </p>
+                <ul style="margin-bottom: 30px; color: #555;">
+                    <li>✓ Vhodné do obývacího/dětského pokoje či ložnice</li>
+                    <li>✓ Barva: oranžová, šedá, bílá</li>
+                    <li>✓ Rozměry: 400×400×200 mm</li>
+                    <li>✓ Možnost jiné barvy a rozměrů či počtu na přání</li>
+                    <li>✓ Dokoupení se skleněnými dvířky (+349 Kč)</li>
+                    <li>✓ Více kusů možnost individuální slevy</li>
+                </ul>
+                <a href="#objednavka" class="btn-hero" style="text-decoration: none; display: inline-block;">Objednat nyní</a>
+            </div>
+        </section>
+
+        <section id="objednavka" style="background: #f9f9f9; padding: 60px 20px;">
+            <h2 style="margin-top: 0; text-align: center;">Objednávkový formulář</h2>
+            <p style="text-align: center; margin-bottom: 40px;">Vyplňte údaje a my se vám ozveme ohledně dokončení objednávky.</p>
+            
+            <div class="form-container">
+                <form action="https://formspree.io/f/xykevqkg" method="POST">
+                    
+                    <input type="hidden" name="_subject" value="Nová objednávka z E-shopu!">
+
+                    <div class="form-group">
+                        <label>Produkt</label>
+                        <input type="text" name="produkt" value="Závěsné boxy (499 Kč)" readonly style="background: #eee; cursor: not-allowed; color: #666;">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="quantity">Počet kusů</label>
+                        <input type="number" id="quantity" name="pocet" min="1" value="1" required style="width: 100px;">
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div class="form-group">
+                            <label for="name">Jméno a příjmení</label>
+                            <input type="text" id="name" name="jmeno" placeholder="Jan Novák" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Telefon</label>
+                            <input type="tel" id="phone" name="telefon" placeholder="+420 777 888 999" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" placeholder="jan.novak@email.cz" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">Doručovací adresa (Ulice, Město, PSČ)</label>
+                        <textarea id="address" name="adresa" rows="2" placeholder="Např. Dlouhá 15, 110 00 Praha 1" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="shipping">Doprava</label>
+                        <select id="shipping" name="doprava" required>
+                            <option value="Osobní odběr (Zdarma)">Osobní odběr - Vinoř (Zdarma)</option>
+                            <option value="DPD (+179 Kč)">DPD (+ 179 Kč)</option>
+                            <option value="PPL (+179 Kč)">PPL (+ 179 Kč)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="note">Poznámka (volitelné)</label>
+                        <textarea id="note" name="poznamka" rows="2" placeholder="Např. jiná fakturační adresa..."></textarea>
+                    </div>
+                    
+                    <div style="text-align: center; margin-top: 30px;">
+                        <button type="submit" class="btn-hero" style="border:none; cursor: pointer; width: 100%; font-size: 1rem;">Odeslat objednávku</button>
+                        
+                        <p style="font-size: 0.9rem; color: #666; margin-top: 15px; margin-bottom: 0;">
+                            * Po odeslání objednávky vás budeme <strong>co nejdříve kontaktovat</strong> s platebními údaji a informacemi o termínu dodání.
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>
+            <strong>Interiery JMP</strong><br>
+            Mladoboleslavská 330, 190 17 Praha 9 – Vinoř<br>
+            <a href="tel:+420733773305" style="color: inherit;">+420 733 773 305</a><br><br>
+            &copy; 2026 Interiery JMP
+        </p>
+    </footer>
+
+</body>
+</html>
