@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if (mapElement) {
         // Souřadnice: Mladoboleslavská 330, Vinoř
         var center = [50.150608, 14.590003];
-        var apiKey = '-4bjsnsfNvKa9QNlyitWK9PObaNGTmNhiIVp5V-ETIk'; // Váš API klíč
+        var apiKey = 'z9faPG0rWqrloxpsVD8Ii5_RyTi77QTiYpDl3L0n1a4'; // Váš API klíč
 
         // Definice vrstev
         var zakladni = L.tileLayer(`https://api.mapy.com/v1/maptiles/basic/256/{z}/{x}/{y}?apikey=${apiKey}`, {

@@ -457,33 +457,91 @@ footer strong { color: var(--primary-blue); }
     box-shadow: 0 10px 20px rgba(25, 118, 210, 0.15);
 }
 
-/* --- Videa (Všechna na výšku) --- */
+/* --- Videa (Grid a Fasáda) --- */
 .video-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    gap: 30px; /* Tady se dělá mezera mezi videi */
     margin-top: 30px;
+    width: 100%;
 }
 
 .video-container {
     position: relative;
-    padding-bottom: 177.78%; /* Poměr 9:16 (na výšku) */
-    height: 0;
-    overflow: hidden;
+    width: 100%;
+    max-width: 350px; /* Mobilní šířka */
+    margin: 0 auto;
     background: #000;
     border-radius: 4px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    
-    /* Omezení šířky, aby video nebylo na PC obří */
-    max-width: 350px; 
-    width: 100%;
-    margin: 0 auto; /* Vycentrování v buňce mřížky */
+    /* Poměr stran 9:16 pro kontejner */
+    aspect-ratio: 9/16; 
 }
 
-.video-container iframe {
+/* Samotná fasáda */
+.youtube-player {
     position: absolute;
-    top: 0; left: 0;
+    top: 0; left: 0; width: 100%; height: 100%;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.youtube-player img {
+    width: 100%; height: 100%; object-fit: cover;
+    opacity: 0.8; transition: 0.3s;
+    display: block; /* Oprava nechtěných mezer pod obrázkem */
+}
+
+.youtube-player:hover img { opacity: 1; }
+
+/* Tlačítko PLAY (Kolečko) */
+.youtube-player::after {
+    content: ""; position: absolute;
+    top: 50%; left: 50%;
+    width: 60px; height: 60px;
+    background-color: rgba(25,118,210,0.8);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+/* Tlačítko PLAY (Trojúhelník) */
+.youtube-player::before {
+    content: ""; position: absolute;
+    top: 50%; left: 50%;
+    width: 0; height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 16px solid white;
+    transform: translate(-40%, -50%);
+    z-index: 3; pointer-events: none;
+}
+
+/* !!! DŮLEŽITÉ: Skrytí tlačítka po kliknutí !!! */
+.youtube-player.playing::after,
+.youtube-player.playing::before {
+    display: none !important;
+}
+
+.youtube-player iframe {
     width: 100%; height: 100%;
+}
+
+/* Šipka v CSS (pokud nemáte obrázek play-icon.svg) */
+.youtube-player::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0; 
+    height: 0; 
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 16px solid white;
+    transform: translate(-40%, -50%); /* Jemné vycentrování trojúhelníku */
+    z-index: 3;
+    pointer-events: none;
 }
 
 /* --- Kontakt a Mapa --- */
@@ -860,4 +918,26 @@ footer strong { color: var(--primary-blue); }
     .footer-info {
         text-align: center; /* Na mobilu vše na střed */
     }
+}
+
+/* --- LAZY LOAD & SCROLL EFEKT --- */
+
+/* Výchozí stav - skryté a posunuté dolů */
+.lazy-scroll {
+    opacity: 0;
+    transform: translateY(30px); /* Posun o 30px dolů */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    will-change: opacity, transform;
+}
+
+/* Stav po načtení - viditelné a na svém místě */
+.lazy-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Placeholder pro obrázky, aby stránka neskákala, než se načtou */
+.galerie-grid img {
+    min-height: 200px; /* Nebo jiná hodnota, zabrání skákání layoutu */
+    background-color: #f0f0f0; /* Šedé pozadí před načtením */
 }
