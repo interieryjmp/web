@@ -1,205 +1,232 @@
 <!DOCTYPE html>
 <html lang="cs">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Realizace | Interiery JMP</title>
-    <link rel="stylesheet" href="style.css">
-	<link rel="icon" type="image/png" href="assets/img/favicon.svg">
-	<script src="menu.js" defer></script>
-	<script src="scroll-loader.js" defer></script>
-	<script defer src="https://cloud.umami.is/script.js" data-website-id="9137bbca-fc81-4a20-9231-736afdfe1194"></script>
-</head>
-<body>
-    <header>
-        <a href="index.html" class="logo">
-			<img src="assets/img/logo.svg" alt="Interiery JMP">
-		</a>
-		
-		<div class="menu-toggle" onclick="toggleMenu()">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
+    <head>
+        <meta charset="utf-8"/>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+        <title>
+            Realizace | Interiery JMP
+        </title>
+        <link href="style.css" rel="stylesheet"/>
+        <link href="assets/img/favicon.svg" rel="icon" type="image/png"/>
+        <script defer="" src="menu.js">
+        </script>
+        <script defer="" src="scroll-loader.js">
+        </script>
+        <script data-website-id="9137bbca-fc81-4a20-9231-736afdfe1194" defer="" src="https://cloud.umami.is/script.js">
+        </script>
+    </head>
+    <body>
+        <header>
+            <a class="logo" href="index.html">
+                <img alt="Interiery JMP" src="assets/img/logo.svg"/>
+            </a>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <span class="bar">
+                </span>
+                <span class="bar">
+                </span>
+                <span class="bar">
+                </span>
+            </div>
+            <nav>
+                <ul id="nav-list">
+                    <li>
+                        <a class="main-link" href="index.html">
+                            Úvod
+                        </a>
+                    </li>
+                    <li>
+                        <a class="main-link" href="omne.html">
+                            O mně
+                        </a>
+                    </li>
+                    <li>
+                        <a class="main-link" href="fotogalerie.html">
+                            Fotogalerie ▾
+                        </a>
+                        <div class="dropdown-content">
+                            <a href="fotogalerie.html#kuchyne">
+                                Kuchyně
+                            </a>
+                            <a href="fotogalerie.html#skrine">
+                                Vestavěné skříně
+                            </a>
+                            <a href="fotogalerie.html#pokoje">
+                                Dětské pokoje
+                            </a>
+                            <a href="fotogalerie.html#koupelny">
+                                Koupelny
+                            </a>
+                            <a href="fotogalerie.html#student">
+                                Studentské pokoje
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="main-link active" href="realizace.html">
+                            Realizace
+                        </a>
+                    </li>
+                    <li>
+                        <a class="main-link" href="kontakt.html">
+                            Kontakt ▾
+                        </a>
+                        <div class="dropdown-content">
+                            <a href="kontakt.html#udaje">
+                                Kontaktní údaje
+                            </a>
+                            <a href="kontakt.html#formular">
+                                Napište nám
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="main-link" href="eshop.html">
+                            E-shop
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <div class="hero" style="height: 40vh; background-image: url('assets/img/realizace_hero.webp');">
+            <div class="hero-text">
+                <h1>
+                    Realizace
+                </h1>
+            </div>
         </div>
-		
-        <nav>
-            <ul id="nav-list">
-                <li><a href="index.html" class="main-link">Úvod</a></li>
-                <li><a href="omne.html" class="main-link">O mně</a></li>
-                <li>
-                    <a href="fotogalerie.html" class="main-link">Fotogalerie ▾</a>
-                    <div class="dropdown-content">
-                        <a href="fotogalerie.html#kuchyne">Kuchyně</a>
-                        <a href="fotogalerie.html#skrine">Vestavěné skříně</a>
-                        <a href="fotogalerie.html#pokoje">Dětské pokoje</a>
-                        <a href="fotogalerie.html#koupelny">Koupelny</a>
-                        <a href="fotogalerie.html#student">Studentské pokoje</a>
+        <main>
+            <div class="video-grid">
+                <div class="video-container">
+                    <div class="youtube-player" data-id="xkxOBosmnFo">
                     </div>
-                </li>
-                <li><a href="realizace.html" class="main-link active">Realizace</a></li>
-                <li>
-                    <a href="kontakt.html" class="main-link">Kontakt ▾</a>
-                    <div class="dropdown-content">
-                        <a href="kontakt.html#udaje">Kontaktní údaje</a>
-                        <a href="kontakt.html#formular">Napište nám</a>
+                </div>
+                <div class="video-container">
+                    <div class="youtube-player" data-id="l2R1o3ayCVE">
                     </div>
-                </li>
-                <li><a href="eshop.html" class="main-link">E-shop</a></li>
-            </ul>
-        </nav>
-    </header>
-	
-	<div class="hero" style="height: 40vh; background-image: url('assets/img/realizace_hero.webp');">
-        <div class="hero-text">
-            <h1>Realizace</h1>
-        </div>
-    </div>
-
-    <main>
-        
-		<div class="video-grid">
-            <div class="video-container">
-                <div class="youtube-player" data-id="xkxOBosmnFo"></div>
+                </div>
+                <div class="video-container">
+                    <div class="youtube-player" data-id="5XL-FFvo150">
+                    </div>
+                </div>
+                <div class="video-container">
+                    <div class="youtube-player" data-id="f8N55TzJacs">
+                    </div>
+                </div>
+                <div class="video-container">
+                    <div class="youtube-player" data-id="5lc9yi6rXlo">
+                    </div>
+                </div>
+                <div class="video-container">
+                    <div class="youtube-player" data-id="C7fLJgX8ia4">
+                    </div>
+                </div>
+                <div class="video-container">
+                    <div class="youtube-player" data-id="ZP-9d78oMzA">
+                    </div>
+                </div>
+                <div class="video-container">
+                    <div class="youtube-player" data-id="4jncmOA4qo8">
+                    </div>
+                </div>
+                <div class="video-container">
+                    <div class="youtube-player" data-id="QYCJjmzqL9w">
+                    </div>
+                </div>
+                <div class="video-container">
+                    <div class="youtube-player" data-id="QwE08k5Qfk4">
+                    </div>
+                </div>
+                <div class="video-container">
+                    <div class="youtube-player" data-id="punPxspy3q8">
+                    </div>
+                </div>
+                <div class="video-container">
+                    <div class="youtube-player" data-id="2Wvs8HUtUPQ">
+                    </div>
+                </div>
+                <div class="video-container">
+                    <div class="youtube-player" data-id="DC89O4LU7Gk">
+                    </div>
+                </div>
+                <div class="video-container">
+                    <div class="youtube-player" data-id="xX1a45pNlgs">
+                    </div>
+                </div>
+                <div class="video-container">
+                    <div class="youtube-player" data-id="x_7zmyiiVCc">
+                    </div>
+                </div>
+                <div class="video-container">
+                    <div class="youtube-player" data-id="39VrDeNQVNI">
+                    </div>
+                </div>
+                <div class="video-container">
+                    <div class="youtube-player" data-id="wQ5cqV3KwhQ">
+                    </div>
+                </div>
+                <div class="video-container">
+                    <div class="youtube-player" data-id="zjVMuSEH3p0">
+                    </div>
+                </div>
+                <div class="video-container">
+                    <div class="youtube-player" data-id="AQqbaGEVPEs">
+                    </div>
+                </div>
+                <div class="video-container">
+                    <div class="youtube-player" data-id="0-jOzOGxc9w">
+                    </div>
+                </div>
+                <div class="video-container">
+                    <div class="youtube-player" data-id="3K4Vw-JVTR4">
+                    </div>
+                </div>
+                <div class="video-container">
+                    <div class="youtube-player" data-id="BvFYocojdz0">
+                    </div>
+                </div>
+                <div class="video-container">
+                    <div class="youtube-player" data-id="kG3QO0-G9HU">
+                    </div>
+                </div>
+                <div class="video-container">
+                    <div class="youtube-player" data-id="IfkKIiKl5mk">
+                    </div>
+                </div>
+                <div class="video-container">
+                    <div class="youtube-player" data-id="uhLvh4P9Kig">
+                    </div>
+                </div>
+                <div class="video-container">
+                    <div class="youtube-player" data-id="XnPgaYD_Jms">
+                    </div>
+                </div>
+                <div class="video-container">
+                    <div class="youtube-player" data-id="utkzjZh8Y3c">
+                    </div>
+                </div>
             </div>
-        
-            <div class="video-container">
-                <div class="youtube-player" data-id="l2R1o3ayCVE"></div>
+        </main>
+        <footer>
+            <div class="footer-container">
+                <div class="footer-badge">
+                    <img alt="Spolehlivá firma 2025" src="assets/img/spolehliva_firma.png"/>
+                </div>
+                <div class="footer-info">
+                    <strong>
+                        Interiery JMP
+                    </strong>
+                    <br/>
+                    Mladoboleslavská 330, 190 17 Praha 9 – Vinoř
+                    <br/>
+                    <a href="tel:+420733773305" style="color: inherit;">
+                        +420 733 773 305
+                    </a>
+                </div>
             </div>
-        
-
-            <div class="video-container">
-                <div class="youtube-player" data-id="5XL-FFvo150"></div>
-            </div>
-        
-
-            <div class="video-container">
-                <div class="youtube-player" data-id="f8N55TzJacs"></div>
-            </div>
-        
-
-            <div class="video-container">
-                <div class="youtube-player" data-id="5lc9yi6rXlo"></div>
-            </div>
-        
-
-            <div class="video-container">
-                <div class="youtube-player" data-id="C7fLJgX8ia4"></div>
-            </div>
-        
-
-            <div class="video-container">
-                <div class="youtube-player" data-id="ZP-9d78oMzA"></div>
-            </div>
-        
-
-            <div class="video-container">
-                <div class="youtube-player" data-id="4jncmOA4qo8"></div>
-            </div>
-        
-
-            <div class="video-container">
-                <div class="youtube-player" data-id="QYCJjmzqL9w"></div>
-            </div>
-        
-
-            <div class="video-container">
-                <div class="youtube-player" data-id="QwE08k5Qfk4"></div>
-            </div>
-        
-
-            <div class="video-container">
-                <div class="youtube-player" data-id="punPxspy3q8"></div>
-            </div>
-        
-
-            <div class="video-container">
-                <div class="youtube-player" data-id="2Wvs8HUtUPQ"></div>
-            </div>
-        
-
-            <div class="video-container">
-                <div class="youtube-player" data-id="DC89O4LU7Gk"></div>
-            </div>
-        
-
-            <div class="video-container">
-                <div class="youtube-player" data-id="xX1a45pNlgs"></div>
-            </div>
-        
-
-            <div class="video-container">
-                <div class="youtube-player" data-id="x_7zmyiiVCc"></div>
-            </div>
-        
-
-            <div class="video-container">
-                <div class="youtube-player" data-id="39VrDeNQVNI"></div>
-            </div>
-        
-
-            <div class="video-container">
-                <div class="youtube-player" data-id="wQ5cqV3KwhQ"></div>
-            </div>
-        
-
-            <div class="video-container">
-                <div class="youtube-player" data-id="zjVMuSEH3p0"></div>
-            </div>
-        
-
-            <div class="video-container">
-                <div class="youtube-player" data-id="AQqbaGEVPEs"></div>
-            </div>
-        
-
-            <div class="video-container">
-                <div class="youtube-player" data-id="0-jOzOGxc9w"></div>
-            </div>
-        
-
-            <div class="video-container">
-                <div class="youtube-player" data-id="3K4Vw-JVTR4"></div>
-            </div>
-        
-
-            <div class="video-container">
-                <div class="youtube-player" data-id="BvFYocojdz0"></div>
-            </div>
-        
-
-            <div class="video-container">
-                <div class="youtube-player" data-id="kG3QO0-G9HU"></div>
-            </div>
-        
-
-            <div class="video-container">
-                <div class="youtube-player" data-id="IfkKIiKl5mk"></div>
-			</div>
-				
-            <div class="video-container">
-                <div class="youtube-player" data-id="uhLvh4P9Kig"></div>
-            </div>
-
-            <div class="video-container">
-                <div class="youtube-player" data-id="XnPgaYD_Jms"></div>
-			</div>
-    	</div>
-    </main>
-
-    <footer>
-        <div class="footer-container">
-			<div class="footer-badge">
-                <img src="assets/img/spolehliva_firma.png" alt="Spolehlivá firma 2025">
-            </div>
-			
-            <div class="footer-info">
-                <strong>Interiery JMP</strong><br>
-                Mladoboleslavská 330, 190 17 Praha 9 – Vinoř<br>
-                <a href="tel:+420733773305" style="color: inherit;">+420 733 773 305</a>
-            </div>
-        </div>
-
-        <p class="copyright">&copy; 2026 Interiery JMP</p>
-    </footer>
-</body>
+            <p class="copyright">
+                © 2026 Interiery JMP
+            </p>
+        </footer>
+    </body>
 </html>
